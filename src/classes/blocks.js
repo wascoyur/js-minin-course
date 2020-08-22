@@ -1,4 +1,5 @@
-export class Block{
+import {col, row} from '../utils'
+class Block{
   constructor(type, value, options){
     this.type = type
     this.value = value
@@ -27,5 +28,24 @@ export class ImageBlock extends Block{
     const { alt, styles, imageStyles } = this.options
     const html = `<img src="${this.value}" alt="${alt}" style="${imageStyles}" />`
     return row(html, styles)
+  }
+}
+export class TextBlock extends Block {
+  constructor(value, options){
+    super('textblock', value, options)
+  }
+  toHTML(){
+    return row(col(`
+        <p style="margin-botom:0">${this.value}</p>
+  `), this.options.styles)
+  }
+}
+export class TextColumnBlock extends Block {
+  constructor(value, options){
+    super('textColumns', value, options)
+  }
+  toHTML(){
+    const html = this.value.map(item => col(item))
+    return row(html.join(''), this.options.styles)
   }
 }

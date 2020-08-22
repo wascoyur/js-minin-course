@@ -1,4 +1,4 @@
-import {Block, TitleBlock, ImageBlock} from './classes/blocks'
+import {TitleBlock, ImageBlock, TextBlock, TextColumnBlock} from './classes/blocks'
 import image from './assets/image.png'
 export const model = [
   new TitleBlock( 'Конструктор сайтов', {
@@ -11,10 +11,11 @@ export const model = [
     imageStyles: 'width: 500px; hight: auto;'
   }),
 
-  new Block('text', 'Lorem ipsum dolor sit, amet consectetur adipisicing ',{
+  new TextBlock('Lorem ipsum dolor sit, amet consectetur adipisicing ',{
     styles: 'padding: 2rem 0; color: #fff; background: linear-gradient(to bottom, #8e2de2,#4a00e0);'
   }),
-  new Block('textColumns',[
+
+  new TextColumnBlock([
     'Приложение на чистом JS',
     'Узнаешь как работают принципы SOLID',
     'JS это просто'],
