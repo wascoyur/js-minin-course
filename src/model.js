@@ -1,28 +1,24 @@
-import {Block} from './classes/blocks'
+import {Block, TitleBlock} from './classes/blocks'
 import image from './assets/image.png'
 export const model = [
-  new Block('title', 'Конструктор сайтов', options:{
-    tag:'h2'
-  }),
-  {type: 'title', value: 'Test Title', options:{
+  new TitleBlock( 'Конструктор сайтов', {
     tag:'h2',
-    styles: 'background: darkred; color: #fff; text-align:center'
-  }},
-
-  {type:'image', value: image, options:{
+    styles: 'background: linear-gradient(to right, #ff0099, #493240); color:#fff; padding: 1.5rem; text-align: center'
+  }),
+  new Block('image', image,{
     styles: 'padding:2rem 0; display: flex; justify-content: center',
     alt:'my image',
     imageStyles: 'width: 500px; hight: auto;'
-  }},
+  }),
 
-  { type: 'text', value: 'Lorem ipsum dolor sit, amet consectetur adipisicing ', options:{
-    styles: 'background: darkblue; color: yellow;'
-  }},
-  {type:'textColumns', value:[
-    '1 text',
-    '2 text',
-    '3 text'
-  ], options:{
-      styles: 'padding: 1rem;'
-  }}
+  new Block('text', 'Lorem ipsum dolor sit, amet consectetur adipisicing ',{
+    styles: 'padding: 2rem 0; color: #fff; background: linear-gradient(to bottom, #8e2de2,#4a00e0);'
+  }),
+  new Block('textColumns',[
+    'Приложение на чистом JS',
+    'Узнаешь как работают принципы SOLID',
+    'JS это просто'],
+    {styles: 'padding: 2rem 0; color:#fff; background:linear-gradient(to bottom, #8e2de2, #4a00e0);'}
+  ),
+
 ]
