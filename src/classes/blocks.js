@@ -19,3 +19,13 @@ export class TitleBlock extends Block{
     `), styles)
   }
 }
+export class ImageBlock extends Block{
+  constructor(value, options){
+     super('image', value, options)
+  }
+  toHTML(){
+    const { alt, styles, imageStyles } = this.options
+    const html = `<img src="${this.value}" alt="${alt}" style="${imageStyles}" />`
+    return row(html, styles)
+  }
+}

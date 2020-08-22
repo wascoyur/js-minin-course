@@ -1,11 +1,11 @@
-import {Block, TitleBlock} from './classes/blocks'
+import {Block, TitleBlock, ImageBlock} from './classes/blocks'
 import image from './assets/image.png'
 export const model = [
   new TitleBlock( 'Конструктор сайтов', {
     tag:'h2',
     styles: 'background: linear-gradient(to right, #ff0099, #493240); color:#fff; padding: 1.5rem; text-align: center'
   }),
-  new Block('image', image,{
+  new ImageBlock(image,{
     styles: 'padding:2rem 0; display: flex; justify-content: center',
     alt:'my image',
     imageStyles: 'width: 500px; hight: auto;'
